@@ -58,7 +58,7 @@ setup(
     platforms='OS Independent',
     packages=['PyBambooHR'],
     include_package_data=True,
-    install_requires=['requests', 'xmltodict'],
+    install_requires=['requests', 'xmltodict', 'six'],
     keywords=['Bamboo', 'HR', 'BambooHR', 'API'],
     classifiers=[
         "Development Status :: 3 - Alpha",

@@ -20,24 +20,6 @@ import requests
 from . import config, utils
 from .utils import make_field_xml
 
-# Python 3 basestring compatibility:
-try:
-    unicode = unicode
-except NameError:
-    # unicode is undefined: We are running Python 3
-    unicode = str
-
-    # basestring is undefined: We are running Python 3
-    try:
-        basestring
-    except NameError:
-        basestring = str
-
-    basestring = (str, bytes)
-else:
-    # unicode is defined: We are running Python 2
-    bytes = str
-
 
 class PyBambooHR(object):
     """
@@ -217,7 +199,7 @@ class PyBambooHR(object):
         @param employee: Dictionary containing row data information.
         """
         xml_fields = ''
-        for k, v in row.iteritems():
+        for k, v in row.items():
             xml_fields += make_field_xml(k, v, pre='\t', post='\n')
 
         xml = "<row>\n{}</row>".format(xml_fields)

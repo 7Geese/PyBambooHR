@@ -7,6 +7,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import datetime
 import json
 import re
+import six
 
 import xmltodict
 
@@ -67,15 +68,9 @@ def make_field_xml(id, value=None, pre='', post=''):
 
 
 def resolve_date_argument(arg):
-    # basestring is undefined: We are running Python 3
-    try:
-        basestring
-    except NameError:
-        basestring = str
-
     if isinstance(arg, (datetime.datetime, datetime.date)):
         return arg.strftime('%Y-%m-%d')
-    elif isinstance(arg, basestring) and _date_regex.match(arg):
+    elif isinstance(arg, six.string_types) and _date_regex.match(arg):
         return arg
     elif arg is None:
         return None
