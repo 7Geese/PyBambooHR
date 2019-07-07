@@ -2,10 +2,14 @@
 A collection of misc. utilities that are used in the main class.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
+
 import datetime
-import re
-import xmltodict
 import json
+import re
+
+import xmltodict
+
 
 def camelcase_keys(data):
     """

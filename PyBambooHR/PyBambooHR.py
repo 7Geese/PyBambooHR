@@ -10,12 +10,15 @@ PyBambooHR.py contains a class by the same name with functions that correspond
 to BambooHR API calls defined at http://www.bamboohr.com/api/documentation/.
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
+
 import datetime
-import requests
-from . import utils
-from . import config
-from .utils import make_field_xml
 from os.path import basename
+
+import requests
+
+from . import config, utils
+from .utils import make_field_xml
 
 # Python 3 basestring compatibility:
 try:

@@ -8,18 +8,21 @@
 """Unittests for employees api
 """
 
-import httpretty
+from __future__ import absolute_import, division, print_function, unicode_literals
+
 import os
 import sys
 import unittest
-
 from json import dumps
+
+import httpretty
 from requests import HTTPError
+
+from PyBambooHR import PyBambooHR
 
 # Force parent directory onto path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from PyBambooHR import PyBambooHR
 
 class test_employees(unittest.TestCase):
     # Used to store the cached instance of PyBambooHR
@@ -308,4 +311,3 @@ class test_employees(unittest.TestCase):
         result = self.bamboo.update_row('customTable', '333', '321', row)
 
         self.assertTrue(result)
-

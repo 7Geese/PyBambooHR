@@ -1,6 +1,9 @@
 #!/usr/bin/env python
-import pypandoc
+from __future__ import absolute_import, division, print_function, unicode_literals
+
 import os
+
+import pypandoc
 
 # pypandoc.core.PANDOC_PATH = '/usr/local/bin/pandoc'
 

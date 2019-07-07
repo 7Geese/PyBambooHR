@@ -8,14 +8,17 @@
 """Unittests for misc. functions
 """
 
+from __future__ import absolute_import, division, print_function, unicode_literals
+
 import os
 import sys
 import unittest
 
+from PyBambooHR import PyBambooHR, utils
+
 # Force parent directory onto path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from PyBambooHR import PyBambooHR, utils
 
 
 class test_misc(unittest.TestCase):
