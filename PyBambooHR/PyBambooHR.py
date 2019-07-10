@@ -525,7 +525,7 @@ class PyBambooHR(object):
             get_fields, title=title, report_format=report_format,
             last_changed=last_changed)
         url = self.base_url + "reports/custom/?format={0}".format(report_format)
-        r = requests.post(url, timeout=self.timeout, data=xml, headers=self.headers, auth=(self.api_key, ''))
+        r = requests.post(url, timeout=self.timeout, data=xml.encode('utf-8'), headers=self.headers, auth=(self.api_key, ''))
         r.raise_for_status()
 
         if report_format == 'json':
